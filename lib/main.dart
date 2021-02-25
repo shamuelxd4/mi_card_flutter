@@ -15,60 +15,83 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SafeArea(
-        child: Scaffold(
-          appBar: AppBar(
-            title: Center(
-              child: Text(
-                "Tarea1 Angela",
-              ),
-            ),
-            backgroundColor: Colors.blueGrey[900],
-          ),
-          backgroundColor: Colors.blueGrey[800],
-          body: RowColors(),
-        ),
-      ),
-    );
-  }
-}
-
-class RowColors extends StatelessWidget {
-  const RowColors({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Container(
-          color: Colors.red,
-          width: 100,
-        ),
-        Container(
+      home: Scaffold(
+        backgroundColor: Colors.blueGrey[800],
+        body: SafeArea(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                color: Colors.yellow,
-                height: 100,
-                width: 100,
+              CircleAvatar(
+                radius: 50.0,
+                backgroundImage: AssetImage('images/foto.jpg'),
               ),
-              Container(
-                color: Colors.lime[900],
-                height: 100,
-                width: 100,
+              Text(
+                "Samuel QC",
+                style: TextStyle(
+                  fontFamily: 'Pacifico',
+                  fontSize: 40,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+              Text(
+                "FLUTTER DEVELOPER",
+                style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Source Sans Pro',
+                  letterSpacing: 2.5,
+                  color: Colors.grey.shade300,
+                ),
+              ),
+              SizedBox(
+                height: 15.0,
+                width: 150.0,
+                child: Divider(
+                  color: Colors.grey.shade300,
+                ),
+              ),
+              Card(
+                margin: EdgeInsets.symmetric(vertical: 15.0, horizontal: 30.0),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.phone,
+                    size: 30.0,
+                    color: Colors.blueGrey.shade700,
+                  ),
+                  title: Text(
+                    "+591 719 66 094",
+                    style: TextStyle(
+                      color: Colors.blueGrey.shade700,
+                      fontSize: 25.0,
+                      fontFamily: 'Source Sans Pro',
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+              Card(
+                margin: EdgeInsets.symmetric(vertical: 15.0, horizontal: 30.0),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.mail,
+                    size: 30.0,
+                    color: Colors.blueGrey.shade700,
+                  ),
+                  title: Text(
+                    "quentasamuel@gmail.com",
+                    style: TextStyle(
+                        color: Colors.blueGrey.shade700,
+                        fontSize: 22.0,
+                        fontFamily: 'Source Sans Pro',
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
               ),
             ],
           ),
         ),
-        Container(
-          color: Colors.green[900],
-          width: 100,
-        ),
-      ],
+      ),
     );
   }
 }
